@@ -18,8 +18,6 @@
         "title": "Scope"
       },
       "id": "Id",
-      "serviceId": "Service Id",
-      "contractId": "Contract Id",
       "meterDescription": "Meter Description",
       "meterName": "Meter Name",
       "meterUtility": "Meter Utility",

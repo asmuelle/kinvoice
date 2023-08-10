@@ -119,12 +119,6 @@ public class ScopeResource {
         Optional<Scope> result = scopeRepository
             .findById(scope.getId())
             .map(existingScope -> {
-                if (scope.getServiceId() != null) {
-                    existingScope.setServiceId(scope.getServiceId());
-                }
-                if (scope.getContractId() != null) {
-                    existingScope.setContractId(scope.getContractId());
-                }
                 if (scope.getMeterDescription() != null) {
                     existingScope.setMeterDescription(scope.getMeterDescription());
                 }

@@ -29,12 +29,6 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class ScopeResourceIT {
 
-    private static final Long DEFAULT_SERVICE_ID = 1L;
-    private static final Long UPDATED_SERVICE_ID = 2L;
-
-    private static final Long DEFAULT_CONTRACT_ID = 1L;
-    private static final Long UPDATED_CONTRACT_ID = 2L;
-
     private static final String DEFAULT_METER_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_METER_DESCRIPTION = "BBBBBBBBBB";
 
@@ -72,8 +66,6 @@ class ScopeResourceIT {
      */
     public static Scope createEntity(EntityManager em) {
         Scope scope = new Scope()
-            .serviceId(DEFAULT_SERVICE_ID)
-            .contractId(DEFAULT_CONTRACT_ID)
             .meterDescription(DEFAULT_METER_DESCRIPTION)
             .meterName(DEFAULT_METER_NAME)
             .meterUtility(DEFAULT_METER_UTILITY)
@@ -89,8 +81,6 @@ class ScopeResourceIT {
      */
     public static Scope createUpdatedEntity(EntityManager em) {
         Scope scope = new Scope()
-            .serviceId(UPDATED_SERVICE_ID)
-            .contractId(UPDATED_CONTRACT_ID)
             .meterDescription(UPDATED_METER_DESCRIPTION)
             .meterName(UPDATED_METER_NAME)
             .meterUtility(UPDATED_METER_UTILITY)
@@ -116,8 +106,6 @@ class ScopeResourceIT {
         List<Scope> scopeList = scopeRepository.findAll();
         assertThat(scopeList).hasSize(databaseSizeBeforeCreate + 1);
         Scope testScope = scopeList.get(scopeList.size() - 1);
-        assertThat(testScope.getServiceId()).isEqualTo(DEFAULT_SERVICE_ID);
-        assertThat(testScope.getContractId()).isEqualTo(DEFAULT_CONTRACT_ID);
         assertThat(testScope.getMeterDescription()).isEqualTo(DEFAULT_METER_DESCRIPTION);
         assertThat(testScope.getMeterName()).isEqualTo(DEFAULT_METER_NAME);
         assertThat(testScope.getMeterUtility()).isEqualTo(DEFAULT_METER_UTILITY);
@@ -154,8 +142,6 @@ class ScopeResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(scope.getId().intValue())))
-            .andExpect(jsonPath("$.[*].serviceId").value(hasItem(DEFAULT_SERVICE_ID.intValue())))
-            .andExpect(jsonPath("$.[*].contractId").value(hasItem(DEFAULT_CONTRACT_ID.intValue())))
             .andExpect(jsonPath("$.[*].meterDescription").value(hasItem(DEFAULT_METER_DESCRIPTION)))
             .andExpect(jsonPath("$.[*].meterName").value(hasItem(DEFAULT_METER_NAME)))
             .andExpect(jsonPath("$.[*].meterUtility").value(hasItem(DEFAULT_METER_UTILITY)))
@@ -174,8 +160,6 @@ class ScopeResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(scope.getId().intValue()))
-            .andExpect(jsonPath("$.serviceId").value(DEFAULT_SERVICE_ID.intValue()))
-            .andExpect(jsonPath("$.contractId").value(DEFAULT_CONTRACT_ID.intValue()))
             .andExpect(jsonPath("$.meterDescription").value(DEFAULT_METER_DESCRIPTION))
             .andExpect(jsonPath("$.meterName").value(DEFAULT_METER_NAME))
             .andExpect(jsonPath("$.meterUtility").value(DEFAULT_METER_UTILITY))
@@ -202,8 +186,6 @@ class ScopeResourceIT {
         // Disconnect from session so that the updates on updatedScope are not directly saved in db
         em.detach(updatedScope);
         updatedScope
-            .serviceId(UPDATED_SERVICE_ID)
-            .contractId(UPDATED_CONTRACT_ID)
             .meterDescription(UPDATED_METER_DESCRIPTION)
             .meterName(UPDATED_METER_NAME)
             .meterUtility(UPDATED_METER_UTILITY)
@@ -221,8 +203,6 @@ class ScopeResourceIT {
         List<Scope> scopeList = scopeRepository.findAll();
         assertThat(scopeList).hasSize(databaseSizeBeforeUpdate);
         Scope testScope = scopeList.get(scopeList.size() - 1);
-        assertThat(testScope.getServiceId()).isEqualTo(UPDATED_SERVICE_ID);
-        assertThat(testScope.getContractId()).isEqualTo(UPDATED_CONTRACT_ID);
         assertThat(testScope.getMeterDescription()).isEqualTo(UPDATED_METER_DESCRIPTION);
         assertThat(testScope.getMeterName()).isEqualTo(UPDATED_METER_NAME);
         assertThat(testScope.getMeterUtility()).isEqualTo(UPDATED_METER_UTILITY);
@@ -297,7 +277,7 @@ class ScopeResourceIT {
         Scope partialUpdatedScope = new Scope();
         partialUpdatedScope.setId(scope.getId());
 
-        partialUpdatedScope.contractId(UPDATED_CONTRACT_ID).meterUtility(UPDATED_METER_UTILITY);
+        partialUpdatedScope.meterName(UPDATED_METER_NAME);
 
         restScopeMockMvc
             .perform(
@@ -311,11 +291,9 @@ class ScopeResourceIT {
         List<Scope> scopeList = scopeRepository.findAll();
         assertThat(scopeList).hasSize(databaseSizeBeforeUpdate);
         Scope testScope = scopeList.get(scopeList.size() - 1);
-        assertThat(testScope.getServiceId()).isEqualTo(DEFAULT_SERVICE_ID);
-        assertThat(testScope.getContractId()).isEqualTo(UPDATED_CONTRACT_ID);
         assertThat(testScope.getMeterDescription()).isEqualTo(DEFAULT_METER_DESCRIPTION);
-        assertThat(testScope.getMeterName()).isEqualTo(DEFAULT_METER_NAME);
-        assertThat(testScope.getMeterUtility()).isEqualTo(UPDATED_METER_UTILITY);
+        assertThat(testScope.getMeterName()).isEqualTo(UPDATED_METER_NAME);
+        assertThat(testScope.getMeterUtility()).isEqualTo(DEFAULT_METER_UTILITY);
         assertThat(testScope.getPricePerMonth()).isEqualTo(DEFAULT_PRICE_PER_MONTH);
     }
 
@@ -332,8 +310,6 @@ class ScopeResourceIT {
         partialUpdatedScope.setId(scope.getId());
 
         partialUpdatedScope
-            .serviceId(UPDATED_SERVICE_ID)
-            .contractId(UPDATED_CONTRACT_ID)
             .meterDescription(UPDATED_METER_DESCRIPTION)
             .meterName(UPDATED_METER_NAME)
             .meterUtility(UPDATED_METER_UTILITY)
@@ -351,8 +327,6 @@ class ScopeResourceIT {
         List<Scope> scopeList = scopeRepository.findAll();
         assertThat(scopeList).hasSize(databaseSizeBeforeUpdate);
         Scope testScope = scopeList.get(scopeList.size() - 1);
-        assertThat(testScope.getServiceId()).isEqualTo(UPDATED_SERVICE_ID);
-        assertThat(testScope.getContractId()).isEqualTo(UPDATED_CONTRACT_ID);
         assertThat(testScope.getMeterDescription()).isEqualTo(UPDATED_METER_DESCRIPTION);
         assertThat(testScope.getMeterName()).isEqualTo(UPDATED_METER_NAME);
         assertThat(testScope.getMeterUtility()).isEqualTo(UPDATED_METER_UTILITY);

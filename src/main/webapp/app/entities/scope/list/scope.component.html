@@ -38,18 +38,6 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="serviceId">
-            <div class="d-flex">
-              <span jhiTranslate="myApp.scope.serviceId">Service Id</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" jhiSortBy="contractId">
-            <div class="d-flex">
-              <span jhiTranslate="myApp.scope.contractId">Contract Id</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
           <th scope="col" jhiSortBy="meterDescription">
             <div class="d-flex">
               <span jhiTranslate="myApp.scope.meterDescription">Meter Description</span>
@@ -94,8 +82,6 @@
           <td>
             <a [routerLink]="['/scope', scope.id, 'view']">{{ scope.id }}</a>
           </td>
-          <td>{{ scope.serviceId }}</td>
-          <td>{{ scope.contractId }}</td>
           <td>{{ scope.meterDescription }}</td>
           <td>{{ scope.meterName }}</td>
           <td>{{ scope.meterUtility }}</td>

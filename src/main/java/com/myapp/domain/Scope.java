@@ -22,12 +22,6 @@ public class Scope implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "service_id")
-    private Long serviceId;
-
-    @Column(name = "contract_id")
-    private Long contractId;
-
     @Column(name = "meter_description")
     private String meterDescription;
 
@@ -61,32 +55,6 @@ public class Scope implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getServiceId() {
-        return this.serviceId;
-    }
-
-    public Scope serviceId(Long serviceId) {
-        this.setServiceId(serviceId);
-        return this;
-    }
-
-    public void setServiceId(Long serviceId) {
-        this.serviceId = serviceId;
-    }
-
-    public Long getContractId() {
-        return this.contractId;
-    }
-
-    public Scope contractId(Long contractId) {
-        this.setContractId(contractId);
-        return this;
-    }
-
-    public void setContractId(Long contractId) {
-        this.contractId = contractId;
     }
 
     public String getMeterDescription() {
@@ -191,8 +159,6 @@ public class Scope implements Serializable {
     public String toString() {
         return "Scope{" +
             "id=" + getId() +
-            ", serviceId=" + getServiceId() +
-            ", contractId=" + getContractId() +
             ", meterDescription='" + getMeterDescription() + "'" +
             ", meterName='" + getMeterName() + "'" +
             ", meterUtility='" + getMeterUtility() + "'" +

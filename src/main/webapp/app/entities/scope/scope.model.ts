@@ -3,8 +3,6 @@ import { IService } from 'app/entities/service/service.model';
 
 export interface IScope {
   id: number;
-  serviceId?: number | null;
-  contractId?: number | null;
   meterDescription?: string | null;
   meterName?: string | null;
   meterUtility?: string | null;

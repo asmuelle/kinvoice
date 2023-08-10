@@ -14,12 +14,6 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="service_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-            <column name="contract_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <column name="meter_description" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -59,8 +53,6 @@
                   tableName="scope"
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
-            <column name="service_id" type="numeric"/>
-            <column name="contract_id" type="numeric"/>
             <column name="meter_description" type="string"/>
             <column name="meter_name" type="string"/>
             <column name="meter_utility" type="string"/>
