@@ -35,8 +35,6 @@ entity Service {
 
 entity Scope {
    id Long
-   serviceId Long
-   contractId Long
    meterDescription String //e.g. Site Name
    meterName String
    meterUtility String
