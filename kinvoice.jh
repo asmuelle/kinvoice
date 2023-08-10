@@ -1,0 +1,51 @@
+
+application {
+  config {
+    baseName myApp,
+    applicationType monolith,
+    packageName com.myapp,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity Customer {
+   id Long
+   name String
+}
+
+entity Contract {
+   id Long
+   name String
+   customerContactName String
+   customerContactAddresslines String
+   customerPurchaseNumber String
+   kwiqlyOrderNumber String
+   basePricePerMonth Integer // e.g. Bulk Price
+   startDate Date
+   endDate Date
+}
+
+entity Service {
+   id Long
+   name String
+}
+
+entity Scope {
+   id Long
+   serviceId Long
+   contractId Long
+   meterDescription String //e.g. Site Name
+   meterName String
+   meterUtility String
+   pricePerMonth Integer
+}
+
+relationship OneToMany {
+  Customer to Contract
+  Contract to Scope
+  Service to Scope
+}
+    
