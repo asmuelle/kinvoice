@@ -8,14 +8,6 @@
       "fieldType": "Long"
     },
     {
-      "fieldName": "serviceId",
-      "fieldType": "Long"
-    },
-    {
-      "fieldName": "contractId",
-      "fieldType": "Long"
-    },
-    {
       "fieldName": "meterDescription",
       "fieldType": "String"
     },

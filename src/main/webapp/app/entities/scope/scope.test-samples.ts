@@ -1,22 +1,19 @@
 import { IScope, NewScope } from './scope.model';
 
 export const sampleWithRequiredData: IScope = {
-  id: 18068,
+  id: 6133,
 };
 
 export const sampleWithPartialData: IScope = {
-  id: 31902,
-  meterDescription: 'gosh Jamir',
+  id: 1457,
 };
 
 export const sampleWithFullData: IScope = {
-  id: 29476,
-  serviceId: 15054,
-  contractId: 14542,
-  meterDescription: 'Crew Borders Southwest',
-  meterName: 'brand',
-  meterUtility: 'East',
-  pricePerMonth: 16731,
+  id: 16484,
+  meterDescription: 'wax Factors BMW',
+  meterName: 'Hungary',
+  meterUtility: 'invoice Crew Borders',
+  pricePerMonth: 2373,
 };
 
 export const sampleWithNewData: NewScope = {

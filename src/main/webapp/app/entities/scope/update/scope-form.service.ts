@@ -18,8 +18,6 @@ type ScopeFormDefaults = Pick<NewScope, 'id'>;
 
 type ScopeFormGroupContent = {
   id: FormControl<IScope['id'] | NewScope['id']>;
-  serviceId: FormControl<IScope['serviceId']>;
-  contractId: FormControl<IScope['contractId']>;
   meterDescription: FormControl<IScope['meterDescription']>;
   meterName: FormControl<IScope['meterName']>;
   meterUtility: FormControl<IScope['meterUtility']>;
@@ -45,8 +43,6 @@ export class ScopeFormService {
           validators: [Validators.required],
         }
       ),
-      serviceId: new FormControl(scopeRawValue.serviceId),
-      contractId: new FormControl(scopeRawValue.contractId),
       meterDescription: new FormControl(scopeRawValue.meterDescription),
       meterName: new FormControl(scopeRawValue.meterName),
       meterUtility: new FormControl(scopeRawValue.meterUtility),

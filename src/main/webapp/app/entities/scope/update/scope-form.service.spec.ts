@@ -20,8 +20,6 @@ describe('Scope Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            serviceId: expect.any(Object),
-            contractId: expect.any(Object),
             meterDescription: expect.any(Object),
             meterName: expect.any(Object),
             meterUtility: expect.any(Object),
@@ -38,8 +36,6 @@ describe('Scope Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            serviceId: expect.any(Object),
-            contractId: expect.any(Object),
             meterDescription: expect.any(Object),
             meterName: expect.any(Object),
             meterUtility: expect.any(Object),
