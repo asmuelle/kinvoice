@@ -50,6 +50,7 @@ public class CacheConfiguration {
             createCache(cm, com.myapp.domain.Service.class.getName());
             createCache(cm, com.myapp.domain.Service.class.getName() + ".scopes");
             createCache(cm, com.myapp.domain.Scope.class.getName());
+            createCache(cm, com.myapp.domain.PGMeter.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

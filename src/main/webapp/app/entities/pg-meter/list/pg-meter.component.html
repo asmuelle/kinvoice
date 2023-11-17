@@ -1,0 +1,190 @@
+<div>
+  <h2 id="page-heading" data-cy="PGMeterHeading">
+    <span jhiTranslate="myApp.pGMeter.home.title">PG Meters</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="myApp.pGMeter.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-pg-meter"
+        [routerLink]="['/pg-meter/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="myApp.pGMeter.home.createLabel">Create a new PG Meter</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="pGMeters?.length === 0">
+    <span jhiTranslate="myApp.pGMeter.home.notFound">No PG Meters found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="pGMeters && pGMeters.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="meterId">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.meterId">Meter Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ownerKey">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.ownerKey">Owner Key</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ownerName">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.ownerName">Owner Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="utility">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.utility">Utility</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="namespace">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.namespace">Namespace</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="meterName">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.meterName">Meter Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ref">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.ref">Ref</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="site">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.site">Site</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lat">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.lat">Lat</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="lon">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.lon">Lon</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="wsLat">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.wsLat">Ws Lat</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="wsLon">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.wsLon">Ws Lon</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="locationId">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.locationId">Location Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="km">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.km">Km</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="peerName">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.peerName">Peer Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="markers">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.markers">Markers</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="price">
+            <div class="d-flex">
+              <span jhiTranslate="myApp.pGMeter.price">Price</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pGMeter of pGMeters; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/pg-meter', pGMeter.id, 'view']">{{ pGMeter.id }}</a>
+          </td>
+          <td>{{ pGMeter.meterId }}</td>
+          <td>{{ pGMeter.ownerKey }}</td>
+          <td>{{ pGMeter.ownerName }}</td>
+          <td>{{ pGMeter.utility }}</td>
+          <td>{{ pGMeter.namespace }}</td>
+          <td>{{ pGMeter.meterName }}</td>
+          <td>{{ pGMeter.ref }}</td>
+          <td>{{ pGMeter.site }}</td>
+          <td>{{ pGMeter.lat }}</td>
+          <td>{{ pGMeter.lon }}</td>
+          <td>{{ pGMeter.wsLat }}</td>
+          <td>{{ pGMeter.wsLon }}</td>
+          <td>{{ pGMeter.locationId }}</td>
+          <td>{{ pGMeter.km }}</td>
+          <td>{{ pGMeter.peerName }}</td>
+          <td>{{ pGMeter.markers }}</td>
+          <td>{{ pGMeter.price }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a [routerLink]="['/pg-meter', pGMeter.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </a>
+
+              <a [routerLink]="['/pg-meter', pGMeter.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </a>
+
+              <button type="submit" (click)="delete(pGMeter)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
