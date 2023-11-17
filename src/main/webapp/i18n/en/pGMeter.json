@@ -1,0 +1,40 @@
+{
+  "myApp": {
+    "pGMeter": {
+      "home": {
+        "title": "PG Meters",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new PG Meter",
+        "createOrEditLabel": "Create or edit a PG Meter",
+        "notFound": "No PG Meters found"
+      },
+      "created": "A new PG Meter is created with identifier {{ param }}",
+      "updated": "A PG Meter is updated with identifier {{ param }}",
+      "deleted": "A PG Meter is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete PG Meter {{ id }}?"
+      },
+      "detail": {
+        "title": "PG Meter"
+      },
+      "id": "ID",
+      "meterId": "Meter Id",
+      "ownerKey": "Owner Key",
+      "ownerName": "Owner Name",
+      "utility": "Utility",
+      "namespace": "Namespace",
+      "meterName": "Meter Name",
+      "ref": "Ref",
+      "site": "Site",
+      "lat": "Lat",
+      "lon": "Lon",
+      "wsLat": "Ws Lat",
+      "wsLon": "Ws Lon",
+      "locationId": "Location Id",
+      "km": "Km",
+      "peerName": "Peer Name",
+      "markers": "Markers",
+      "price": "Price"
+    }
+  }
+}

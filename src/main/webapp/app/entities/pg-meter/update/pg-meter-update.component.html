@@ -1,0 +1,126 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-pg-meter-heading" data-cy="PGMeterCreateUpdateHeading" jhiTranslate="myApp.pGMeter.home.createOrEditLabel">
+        Create or edit a PG Meter
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.meterId" for="field_meterId">Meter Id</label>
+          <input type="number" class="form-control" name="meterId" id="field_meterId" data-cy="meterId" formControlName="meterId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.ownerKey" for="field_ownerKey">Owner Key</label>
+          <input type="text" class="form-control" name="ownerKey" id="field_ownerKey" data-cy="ownerKey" formControlName="ownerKey" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.ownerName" for="field_ownerName">Owner Name</label>
+          <input type="text" class="form-control" name="ownerName" id="field_ownerName" data-cy="ownerName" formControlName="ownerName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.utility" for="field_utility">Utility</label>
+          <input type="text" class="form-control" name="utility" id="field_utility" data-cy="utility" formControlName="utility" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.namespace" for="field_namespace">Namespace</label>
+          <input type="text" class="form-control" name="namespace" id="field_namespace" data-cy="namespace" formControlName="namespace" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.meterName" for="field_meterName">Meter Name</label>
+          <input type="text" class="form-control" name="meterName" id="field_meterName" data-cy="meterName" formControlName="meterName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.ref" for="field_ref">Ref</label>
+          <input type="text" class="form-control" name="ref" id="field_ref" data-cy="ref" formControlName="ref" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.site" for="field_site">Site</label>
+          <input type="text" class="form-control" name="site" id="field_site" data-cy="site" formControlName="site" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.lat" for="field_lat">Lat</label>
+          <input type="number" class="form-control" name="lat" id="field_lat" data-cy="lat" formControlName="lat" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.lon" for="field_lon">Lon</label>
+          <input type="number" class="form-control" name="lon" id="field_lon" data-cy="lon" formControlName="lon" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.wsLat" for="field_wsLat">Ws Lat</label>
+          <input type="number" class="form-control" name="wsLat" id="field_wsLat" data-cy="wsLat" formControlName="wsLat" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.wsLon" for="field_wsLon">Ws Lon</label>
+          <input type="number" class="form-control" name="wsLon" id="field_wsLon" data-cy="wsLon" formControlName="wsLon" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.locationId" for="field_locationId">Location Id</label>
+          <input
+            type="number"
+            class="form-control"
+            name="locationId"
+            id="field_locationId"
+            data-cy="locationId"
+            formControlName="locationId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.km" for="field_km">Km</label>
+          <input type="number" class="form-control" name="km" id="field_km" data-cy="km" formControlName="km" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.peerName" for="field_peerName">Peer Name</label>
+          <input type="text" class="form-control" name="peerName" id="field_peerName" data-cy="peerName" formControlName="peerName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.markers" for="field_markers">Markers</label>
+          <input type="text" class="form-control" name="markers" id="field_markers" data-cy="markers" formControlName="markers" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="myApp.pGMeter.price" for="field_price">Price</label>
+          <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

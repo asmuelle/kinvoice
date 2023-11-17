@@ -1,0 +1,78 @@
+{
+  "applications": "*",
+  "changelogDate": "20230810133447",
+  "entityTableName": "pg_meter",
+  "fields": [
+    {
+      "fieldName": "meterId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ownerKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ownerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "utility",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "namespace",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "meterName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ref",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "site",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lat",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "lon",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "wsLat",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "wsLon",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "locationId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "km",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "peerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "markers",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Float"
+    }
+  ],
+  "name": "PGMeter",
+  "relationships": [],
+  "searchEngine": "no"
+}

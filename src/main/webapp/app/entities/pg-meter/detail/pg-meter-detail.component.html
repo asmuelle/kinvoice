@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="pGMeter">
+      <h2 data-cy="pGMeterDetailsHeading"><span jhiTranslate="myApp.pGMeter.detail.title">PG Meter</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ pGMeter.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.meterId">Meter Id</span></dt>
+        <dd>
+          <span>{{ pGMeter.meterId }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.ownerKey">Owner Key</span></dt>
+        <dd>
+          <span>{{ pGMeter.ownerKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.ownerName">Owner Name</span></dt>
+        <dd>
+          <span>{{ pGMeter.ownerName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.utility">Utility</span></dt>
+        <dd>
+          <span>{{ pGMeter.utility }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.namespace">Namespace</span></dt>
+        <dd>
+          <span>{{ pGMeter.namespace }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.meterName">Meter Name</span></dt>
+        <dd>
+          <span>{{ pGMeter.meterName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.ref">Ref</span></dt>
+        <dd>
+          <span>{{ pGMeter.ref }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.site">Site</span></dt>
+        <dd>
+          <span>{{ pGMeter.site }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.lat">Lat</span></dt>
+        <dd>
+          <span>{{ pGMeter.lat }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.lon">Lon</span></dt>
+        <dd>
+          <span>{{ pGMeter.lon }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.wsLat">Ws Lat</span></dt>
+        <dd>
+          <span>{{ pGMeter.wsLat }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.wsLon">Ws Lon</span></dt>
+        <dd>
+          <span>{{ pGMeter.wsLon }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.locationId">Location Id</span></dt>
+        <dd>
+          <span>{{ pGMeter.locationId }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.km">Km</span></dt>
+        <dd>
+          <span>{{ pGMeter.km }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.peerName">Peer Name</span></dt>
+        <dd>
+          <span>{{ pGMeter.peerName }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.markers">Markers</span></dt>
+        <dd>
+          <span>{{ pGMeter.markers }}</span>
+        </dd>
+        <dt><span jhiTranslate="myApp.pGMeter.price">Price</span></dt>
+        <dd>
+          <span>{{ pGMeter.price }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/pg-meter', pGMeter.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
