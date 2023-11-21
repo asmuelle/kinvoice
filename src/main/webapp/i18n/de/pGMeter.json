@@ -1,0 +1,40 @@
+{
+  "myApp": {
+    "pGMeter": {
+      "home": {
+        "title": "PG Meters",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "PG Meter erstellen",
+        "createOrEditLabel": "PG Meter erstellen oder bearbeiten",
+        "notFound": "Keine PG Meters gefunden"
+      },
+      "created": "PG Meter erstellt mit ID {{ param }}",
+      "updated": "PG Meter aktualisiert mit ID {{ param }}",
+      "deleted": "PG Meter gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll PG Meter {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "PG Meter"
+      },
+      "id": "ID",
+      "meterId": "Meter Id",
+      "ownerKey": "Owner Key",
+      "ownerName": "Owner Name",
+      "utility": "Utility",
+      "namespace": "Namespace",
+      "meterName": "Meter Name",
+      "ref": "Ref",
+      "site": "Site",
+      "lat": "Lat",
+      "lon": "Lon",
+      "wsLat": "Ws Lat",
+      "wsLon": "Ws Lon",
+      "locationId": "Location Id",
+      "km": "Km",
+      "peerName": "Peer Name",
+      "markers": "Markers",
+      "price": "Price"
+    }
+  }
+}
