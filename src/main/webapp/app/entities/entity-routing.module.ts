@@ -24,6 +24,11 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'myApp.scope.home.title' },
         loadChildren: () => import('./scope/scope.routes'),
       },
+      {
+        path: 'pg-meter',
+        data: { pageTitle: 'myApp.pGMeter.home.title' },
+        loadChildren: () => import('./pg-meter/pg-meter.routes'),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

@@ -20,7 +20,7 @@
     "enableHibernateCache": true,
     "enableSwaggerCodegen": false,
     "enableTranslation": true,
-    "entities": ["Customer", "Contract", "Service", "Scope"],
+    "entities": ["PGMeter", "Customer", "Contract", "Service", "Scope"],
     "entitySuffix": "",
     "gitCompany": "",
     "jhiPrefix": "jhi",
